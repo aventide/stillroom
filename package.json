@@ -1,0 +1,12 @@
+{
+  "name": "stillroom",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8766 --directory dist",
+    "check": "node --check dist/app.js && node --check dist/audio-settings.js && node --check dist/noise-worklet.js && node --check dist/nature-worklet.js && node --check dist/sw.js",
+    "test": "node tests/audio.test.mjs && node tests/player.test.mjs",
+    "deploy": "npm run check && npm test && npx surge --project ./dist --domain stillroom.surge.sh"
+  },
+  "type": "module"
+}
