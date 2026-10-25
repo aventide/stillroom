@@ -98,7 +98,7 @@ for (const scene of sceneKinds) assert.ok(natureHtml.includes(`data-noise="${sce
 console.log('Nature page verified: six scene selections, playback controls, reciprocal footer navigation.');
 
 await vm.runInContext("choose('superblue')", sandbox);
-assert.equal(el('#track-name').textContent, 'Deep blue');
+assert.equal(el('#track-name').textContent, 'Deep blue noise');
 assert.equal(vm.runInContext('voice.kind', sandbox), 'superblue');
 assert.match(homeHtml, /role="tablist"/);
 assert.match(homeHtml, /id="colors" role="tabpanel"/);
